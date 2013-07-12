@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require 'courgette'
+require 'logger'
+
+token = "presharedkey"
+aubergine = "http://127.0.0.1:4567"
+Courgette.run!(aubergine, token)
