@@ -15,8 +15,14 @@ module Courgette
           logger.info "#{device.ip} #{status}"
         rescue Timeout::Error
           logger.info "#{device.ip} is unreachable (timeout)"
+        rescue Net::SSH::Disconnect
+          logger.info "#{device.ip} is unreachable (disconnect)"
         rescue Net::SSH::AuthenticationFailed
           logger.info "#{device.ip} credentials are incorrect"
+        rescue Errno::ECONNREFUSED
+          logger.info "#{device.ip} is unreachable (connection refused)"
+        rescue
+          logger.info "#{device.ip} fatal error"
         end
       end
     end

@@ -1,7 +1,7 @@
 # encoding: utf-8
 Gem::Specification.new do |gem|
   gem.name = "aubergine"
-  gem.version = "0.0.2"
+  gem.version = "0.0.3"
   gem.date = "2013-07-15"
   gem.authors = ["Guillaume Rose"]
   gem.email = "guillaume.rose@gmail.com"
