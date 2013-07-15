@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 require 'aubergine'
 
 Aubergine.register([
@@ -13,4 +12,4 @@ Aubergine.register([
 
 Aubergine.repository = "/tmp/aubergine"
 
-Aubergine.run!
+run Aubergine::Server

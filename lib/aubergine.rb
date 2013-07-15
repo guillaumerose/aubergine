@@ -12,8 +12,11 @@ module Aubergine
     Satellite.all = data
   end
 
-  def self.run!(repository)
+  def self.repository=(repository)
     Path.configure(repository)
+  end
+
+  def self.run!
     Aubergine::Server.run!
   end
 end
