@@ -6,7 +6,7 @@ module Aubergine
 
     before do
       @satellite = Satellite.find(request.env['HTTP_COURGETTE'])
-      return status(401) unless @satellite
+      halt 401 unless @satellite
     end
 
     get '/configuration.json' do
