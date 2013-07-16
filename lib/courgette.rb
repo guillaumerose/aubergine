@@ -11,7 +11,7 @@ require_relative './courgette/client.rb'
 require_relative './courgette/executor.rb'
 
 module Courgette
-  def self.run!(aubergine, token, executors = 4, logger = Logger.new(STDOUT))
-    Executor.new(Client.new(aubergine, token), executors, logger).launch!
+  def self.run!(aubergine, token, executors = 4, logger = Logger.new(STDOUT), filter = Proc.new { |device| true })
+    Executor.new(Client.new(aubergine, token), executors, logger).launch!(filter)
   end
 end
