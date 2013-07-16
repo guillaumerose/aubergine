@@ -23,6 +23,10 @@ module Aubergine
       end
 
       repository = Git.open(Path.repository)
+      
+      repository.config('user.name', 'Aubergine')
+      repository.config('user.email', 'aubergine@company.com')
+
       shortname = path.short
       if repository.diff('HEAD', shortname).entries.length > 0
         repository.add(shortname)

@@ -21,8 +21,6 @@ module Courgette
           logger.info "#{device.ip} credentials are incorrect"
         rescue Errno::ECONNREFUSED
           logger.info "#{device.ip} is unreachable (connection refused)"
-        rescue
-          logger.info "#{device.ip} fatal error"
         end
       end
     end
