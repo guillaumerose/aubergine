@@ -26,6 +26,8 @@ module Courgette
         logger.info "#{device.ip} credentials are incorrect"
       rescue Errno::ECONNREFUSED
         logger.info "#{device.ip} is unreachable (connection refused)"
+      rescue Net::SSH::Exception => e
+          logger.info "#{device.ip} ssh error (#{e.message})"
       end
     end
   end
