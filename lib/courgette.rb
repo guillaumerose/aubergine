@@ -1,4 +1,5 @@
 require 'logger'
+require 'timeout'
 
 require 'httparty'
 require 'json'

@@ -2,7 +2,10 @@ module Courgette
   class Device
     VENDOR_CLASSES = {
       'hp' => Commutateurs::HP,
-      'cisco' => Commutateurs::Cisco
+      'cisco' => Commutateurs::Cisco,
+      'juniper' => Commutateurs::Juniper,
+      'fortigate' => Commutateurs::Fortigate,
+      'h3c' => Commutateurs::H3c
     }
 
     attr_reader :ip, :vendor

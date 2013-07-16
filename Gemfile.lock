@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    commutateurs (0.0.9)
+    commutateurs (0.1.0)
       net-ssh
     git (1.2.5)
     httparty (0.11.0)

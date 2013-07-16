@@ -10,7 +10,11 @@ module Courgette
 
     def launch!(filter)
       Parallel.each(client.devices.select { |device| filter.call(device) }, in_threads: @executors) do |device|
-        fetch_and_update(device)
+        begin
+        Timeout::timeout(240) { fetch_and_update(device) }
+        rescue
+        logger.info "#{device.ip} execution too long (timeout)"
+        end
       end
     end
 
