@@ -1,7 +1,7 @@
 module Courgette
   class Device
     VENDOR_CLASSES = {
-      'hp' => Commutateurs::HP,
+      'hp' => Courgette::HP, # using sftp
       'cisco' => Commutateurs::Cisco,
       'juniper' => Commutateurs::Juniper,
       'fortigate' => Commutateurs::Fortigate,

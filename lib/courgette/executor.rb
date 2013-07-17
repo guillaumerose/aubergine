@@ -31,7 +31,9 @@ module Courgette
       rescue Errno::ECONNREFUSED
         logger.info "#{device.ip} is unreachable (connection refused)"
       rescue Net::SSH::Exception => e
-          logger.info "#{device.ip} ssh error (#{e.message})"
+        logger.info "#{device.ip} ssh error (#{e.message})"
+      rescue => e
+        logger.info "#{device.ip} fatal error (#{e.message})"
       end
     end
   end
