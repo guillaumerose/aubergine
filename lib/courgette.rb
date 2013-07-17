@@ -7,6 +7,8 @@ require 'json'
 require 'commutateurs'
 require 'parallel'
 
+require 'net/sftp'
+
 require_relative './courgette/hp.rb'
 require_relative './courgette/device.rb'
 require_relative './courgette/client.rb'

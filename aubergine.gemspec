@@ -1,7 +1,7 @@
 # encoding: utf-8
 Gem::Specification.new do |gem|
   gem.name = "aubergine"
-  gem.version = "0.1.2"
+  gem.version = "0.1.3"
   gem.date = "2013-07-17"
   gem.authors = ["Guillaume Rose"]
   gem.email = "guillaume.rose@gmail.com"
@@ -24,6 +24,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency('sinatra')
   gem.add_dependency('httparty')
   gem.add_dependency('parallel')
+  gem.add_dependency('net-sftp')
 
   gem.license = 'MIT'
 end
