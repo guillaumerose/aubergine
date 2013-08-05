@@ -10,6 +10,8 @@ Architecture
 Aubergine is a web-server that provides network devices details to satellites. They send back device configurations to the server.
 For each configuration received, aubergine creates a commit (with git).
 
+![Schema](https://github.com/guillaumerose/aubergine/blob/master/architecture.png?raw=true)
+
 Configuration
 -------------
 
