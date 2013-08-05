@@ -29,7 +29,7 @@ module Courgette
       device.connect
       device.enable
 
-      device.configuration.unpack('C*').pack('U*')
+      device.configuration.unpack('C*').pack('U*').gsub("\r\n", "\n")
     end
   end
 end
