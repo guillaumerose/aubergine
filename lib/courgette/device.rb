@@ -29,7 +29,7 @@ module Courgette
       device.connect
       device.enable
 
-      device.configuration
+      device.configuration.unpack('C*').pack('U*')
     end
   end
 end
