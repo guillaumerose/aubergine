@@ -38,6 +38,16 @@ aubergine = "http://127.0.0.1:4567"
 Courgette.run!(aubergine, token)
 ```
 
+Supported devices
+-----------------
+
+Currently, supported devices are :
+
+* Cisco Catalyst
+* H3c
+* Juniper SSG
+* HP Procurve (doing sFTP - to be improved)
+
 Deploy
 ------
 
