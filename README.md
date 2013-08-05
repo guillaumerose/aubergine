@@ -37,3 +37,15 @@ token = "presharedkey"
 aubergine = "http://127.0.0.1:4567"
 Courgette.run!(aubergine, token)
 ```
+
+Deploy
+------
+
+See puppet manifest (soon).
+
+TODO
+----
+
+* Better support of HP devices
+* Add more details (show version, etc)
+* Hide passwords and preshared keys
