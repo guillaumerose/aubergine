@@ -10,5 +10,13 @@ module Aubergine
     def to_s
       @name
     end
+
+    def self.find(*args)
+      @@backend.find(*args)
+    end
+
+    def self.backend=(data)
+      @@backend = data
+    end
   end
 end

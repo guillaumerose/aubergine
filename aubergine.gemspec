@@ -11,7 +11,8 @@ Gem::Specification.new do |gem|
 
   gem.files = ["lib/aubergine/path.rb",
                "lib/aubergine/satellite.rb",
-               "lib/aubergine/satellite_file.rb",
+               "lib/aubergine/satellite_provider.rb",
+               "lib/aubergine/file_satellite_provider.rb",
                "lib/aubergine/server.rb",
                "lib/aubergine/device.rb",
                "lib/courgette/hp.rb",

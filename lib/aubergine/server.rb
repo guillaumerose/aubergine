@@ -5,7 +5,7 @@ module Aubergine
     end
 
     before do
-      @satellite = FileSatelliteProvider.find(request.env['HTTP_COURGETTE'])
+      @satellite = Satellite.find(request.env['HTTP_COURGETTE'])
       halt 401 unless @satellite
     end
 
