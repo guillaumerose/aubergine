@@ -7,6 +7,7 @@ require_relative './aubergine/device.rb'
 require_relative './aubergine/satellite.rb'
 require_relative './aubergine/satellite_provider.rb'
 require_relative './aubergine/file_satellite_provider.rb'
+require_relative './aubergine/merge_satellite_provider.rb'
 require_relative './aubergine/path.rb'
 require_relative './aubergine/server.rb'
 

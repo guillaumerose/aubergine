@@ -1,7 +1,7 @@
 # encoding: utf-8
 Gem::Specification.new do |gem|
   gem.name = "aubergine"
-  gem.version = "0.1.5"
+  gem.version = "0.1.6"
   gem.date = "2013-08-06"
   gem.authors = ["Guillaume Rose"]
   gem.email = "guillaume.rose@gmail.com"
@@ -13,6 +13,7 @@ Gem::Specification.new do |gem|
                "lib/aubergine/satellite.rb",
                "lib/aubergine/satellite_provider.rb",
                "lib/aubergine/file_satellite_provider.rb",
+               "lib/aubergine/merge_satellite_provider.rb",
                "lib/aubergine/server.rb",
                "lib/aubergine/device.rb",
                "lib/courgette/hp.rb",
