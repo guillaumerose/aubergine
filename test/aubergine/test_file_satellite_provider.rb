@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
-class SatelliteFileTest < Test::Unit::TestCase
+class FileSatelliteProviderTest < Test::Unit::TestCase
   include Ramcrest::HasAttribute
   include Ramcrest::IncludesExactly
   include Ramcrest::EqualTo
