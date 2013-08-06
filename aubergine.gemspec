@@ -31,8 +31,9 @@ Gem::Specification.new do |gem|
   gem.add_dependency('net-sftp')
 
   gem.add_development_dependency 'rake'
-  gem.add_development_dependency 'test-unit'
+  gem.add_development_dependency 'minitest'
   gem.add_development_dependency 'ramcrest'
+  gem.add_development_dependency 'rack-test'
 
   gem.license = 'MIT'
 end

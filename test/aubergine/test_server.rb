@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
-class ServerTest < Test::Unit::TestCase
+describe Aubergine::Server do
   include Ramcrest::HasAttribute
   include Ramcrest::IncludesExactly
   include Ramcrest::EqualTo
@@ -11,7 +11,7 @@ class ServerTest < Test::Unit::TestCase
     Aubergine::Server
   end
   
-  def setup
+  before do
     Aubergine.register([
       {
         name: 'remote1',
@@ -24,7 +24,7 @@ class ServerTest < Test::Unit::TestCase
     ])
   end
 
-  def test_authentication_is_required
+  it "requires a preshared key" do
     get '/configuration.json'
     assert_that last_response.status, equal_to(401)
 
@@ -32,7 +32,7 @@ class ServerTest < Test::Unit::TestCase
     assert_that last_response.status, equal_to(401)
   end
   
-  def test_authentication_pass
+  it "responds the correct json" do
     get '/configuration.json', {}, { 'HTTP_COURGETTE' => 'presharedkey' }
     assert_that last_response.status, equal_to(200)
     assert_that last_response.body, equal_to('[{"ip":"192.168.0.1","vendor":"hp","login":"admin","password":"admin"},{"ip":"192.168.0.2","vendor":"hp","login":"admin","password":"admin","enable":"enable"}]')

@@ -1,14 +1,12 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
-class MergeSatelliteProviderTest < Test::Unit::TestCase
+describe Aubergine::MergeSatelliteProvider do
   include Ramcrest::HasAttribute
   include Ramcrest::IncludesExactly
   include Ramcrest::EqualTo
 
-  include Aubergine
-
   def setup
-    @provider1 = FileSatelliteProvider.new([
+    @provider1 = Aubergine::FileSatelliteProvider.new([
       {
         name: 'remote1',
         key: 'presharedkey',
@@ -17,7 +15,7 @@ class MergeSatelliteProviderTest < Test::Unit::TestCase
         ]
       }])
 
-    @provider2 = FileSatelliteProvider.new([  {
+    @provider2 = Aubergine::FileSatelliteProvider.new([  {
         name: 'remote2',
         key: 'anotherkey',
         devices: [
@@ -26,7 +24,7 @@ class MergeSatelliteProviderTest < Test::Unit::TestCase
         ]
       }])
 
-    @provider = MergeSatelliteProvider.new(@provider1, @provider2)
+    @provider = Aubergine::MergeSatelliteProvider.new(@provider1, @provider2)
   end
   
   def test_find_satellite
