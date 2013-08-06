@@ -3,6 +3,7 @@ require 'json'
 
 require 'git'
 
+require_relative './aubergine/device.rb'
 require_relative './aubergine/satellite.rb'
 require_relative './aubergine/path.rb'
 require_relative './aubergine/server.rb'

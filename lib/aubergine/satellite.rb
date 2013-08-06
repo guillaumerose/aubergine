@@ -1,6 +1,6 @@
 module Aubergine
   class Satellite
-    attr_reader :devices
+    attr_reader :devices, :name
 
     def initialize(name, devices)
       @name = name
@@ -10,7 +10,7 @@ module Aubergine
     def self.find(key)
       satellite = @@all.find { |satellite| satellite[:key] == key }
       if satellite
-        new(satellite[:name], satellite[:devices])
+        new(satellite[:name], satellite[:devices].map { |device| Device.build(device) })
       else
         nil
       end
