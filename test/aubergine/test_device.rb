@@ -1,7 +1,4 @@
-require 'test/unit'
-require 'ramcrest'
-
-require 'aubergine'
+require File.dirname(__FILE__) + '/../test_helper'
 
 class DeviceTest < Test::Unit::TestCase
   include Ramcrest::EqualTo

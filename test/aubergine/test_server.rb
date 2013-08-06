@@ -1,10 +1,4 @@
-require 'test/unit'
-require 'rack/test'
-require 'ramcrest'
-
-require 'aubergine'
-
-require_relative '../lib/aubergine/server.rb'
+require File.dirname(__FILE__) + '/../test_helper'
 
 class ServerTest < Test::Unit::TestCase
   include Ramcrest::HasAttribute
