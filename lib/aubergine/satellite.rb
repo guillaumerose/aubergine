@@ -10,9 +10,5 @@ module Aubergine
     def to_s
       @name
     end
-
-    def self.find(key)
-      raise "Not implemented"
-    end
   end
 end

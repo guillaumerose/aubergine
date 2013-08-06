@@ -27,6 +27,9 @@ class ServerTest < Test::Unit::TestCase
   def test_authentication_is_required
     get '/configuration.json'
     assert_that last_response.status, equal_to(401)
+
+    get '/configuration.json', {}, { 'HTTP_COURGETTE' => 'wrong' }
+    assert_that last_response.status, equal_to(401)
   end
   
   def test_authentication_pass

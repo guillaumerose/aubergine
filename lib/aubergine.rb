@@ -5,13 +5,13 @@ require 'git'
 
 require_relative './aubergine/device.rb'
 require_relative './aubergine/satellite.rb'
-require_relative './aubergine/satellite_file.rb'
+require_relative './aubergine/file_satellite_provider.rb'
 require_relative './aubergine/path.rb'
 require_relative './aubergine/server.rb'
 
 module Aubergine
   def self.register(data)
-    SatelliteFile.all = data
+    FileSatelliteProvider.all = data
   end
 
   def self.repository=(repository)
