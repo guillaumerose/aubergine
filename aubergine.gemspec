@@ -30,5 +30,9 @@ Gem::Specification.new do |gem|
   gem.add_dependency('parallel')
   gem.add_dependency('net-sftp')
 
+  gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'test-unit'
+  gem.add_development_dependency 'ramcrest'
+
   gem.license = 'MIT'
 end
