@@ -1,8 +1,7 @@
 aubergine
 =========
 
-Distributed RANCID - backup your network devices
-
+Distributed RANCID - backup your network devices [![Build Status](https://api.travis-ci.org/guillaumerose/aubergine.png)](https://travis-ci.org/guillaumerose/aubergine)
 
 Architecture
 ------------
