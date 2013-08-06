@@ -12,7 +12,7 @@ class ServerTest < Test::Unit::TestCase
   end
   
   def setup
-    Aubergine::Satellite.all = [
+    Aubergine.register([
       {
         name: 'remote1',
         key: 'presharedkey',
@@ -21,7 +21,7 @@ class ServerTest < Test::Unit::TestCase
           { ip: '192.168.0.2', vendor: 'hp', login: 'admin', password: 'admin', enable: 'enable' }
         ]
       }
-    ]
+    ])
   end
 
   def test_authentication_is_required
