@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+require 'aubergine'
+
+class DatabaseSatelliteProvider < DatabaseSatelliteProvider
+  def initialize(params)
+    # connect to the db
+  end
+
+  def find(key)
+    # query the db
+    Satellite.new('name', [
+      Device.new('192.168.0.1', 'cisco', 'administrator', 'password', 'password'),
+      Device.new('192.168.0.2', 'cisco', 'administrator', 'password', 'password')
+    ])  
+  end
+end
+
+Aubergine.backend = DatabaseSatelliteProvider.new(hostname: '192.168.0.3', user: 'administrator', password: 'password')
+Aubergine.repository = "/tmp/aubergine"
+
+Aubergine.run!
