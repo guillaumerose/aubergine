@@ -25,11 +25,17 @@ module Courgette
     def fetch(debug = false)
       credentials = Commutateurs::Credentials.new(@login, @password, @enable)
 
-      device = VENDOR_CLASSES[vendor].new(ip, credentials, debug)
+      device = vendor_class.new(ip, credentials, debug)
       device.connect
       device.enable
 
       device.configuration.unpack('C*').pack('U*').gsub("\r\n", "\n")
+    end
+
+    def vendor_class
+      klass = VENDOR_CLASSES[vendor]
+      raise "Vendor not found" unless klass
+      klass
     end
   end
 end
