@@ -1,7 +1,7 @@
 # encoding: utf-8
 Gem::Specification.new do |gem|
   gem.name = "aubergine"
-  gem.version = "0.1.7"
+  gem.version = "0.1.8"
   gem.date = "2013-08-08"
   gem.authors = ["Guillaume Rose"]
   gem.email = "guillaume.rose@gmail.com"
@@ -23,6 +23,7 @@ Gem::Specification.new do |gem|
                "lib/courgette/fetchers/commutateurs_fetcher.rb",
                "lib/courgette/fetchers/fetcher.rb",
                "lib/courgette/processors/default_processor.rb",
+               "lib/courgette/processors/cisco_processor.rb",
                "lib/courgette/processors/processor.rb",
                "lib/courgette/executor.rb",
                "lib/aubergine.rb",
