@@ -34,6 +34,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'minitest'
   gem.add_development_dependency 'ramcrest'
   gem.add_development_dependency 'rack-test'
+  gem.add_development_dependency 'mocha'
 
   gem.license = 'MIT'
 end
