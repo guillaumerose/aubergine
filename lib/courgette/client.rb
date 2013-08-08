@@ -10,7 +10,7 @@ module Courgette
     def devices
       response = self.class.get("#{@base}/configuration.json", @headers)
       if response.code == 200
-        response.parsed_response.map { |raw| Device.build(raw) }
+        response.parsed_response.map { |raw| Device.new(raw) }
       else
         raise "Configuration not found."
       end
