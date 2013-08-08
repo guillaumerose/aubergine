@@ -3,33 +3,31 @@ require File.dirname(__FILE__) + '/../test_helper'
 describe Courgette::Device do
   include Ramcrest::EqualTo
   
-  it "can retrieve the configuration" do
-  	@credentials = mock('credentials')
-  	@cisco = mock('device')
-  	
-  	Commutateurs::Credentials.stubs(:new).with('login', 'password', 'enable').returns(@credentials)
-  	Commutateurs::Cisco.stubs(:new).with('127.0.0.1', @credentials, false).returns(@cisco)
+  before do
+    @chain1 = mock('chain1')
+    @chain1.stubs(:responsible_of).returns(false)
+    @chain1.stubs(:responsible_of).with('cisco').returns(true)
 
-  	@cisco.expects(:connect)
-  	@cisco.expects(:enable)
-  	@cisco.expects(:configuration).returns("Configuration")
+    @chain2 = mock('chain2')
+    @chain2.stubs(:responsible_of).returns(false)
+    @chain2.stubs(:responsible_of).with('h3c').returns(true)
 
-  	device = Courgette::Device.new('127.0.0.1', 'cisco', 'login', 'password', 'enable')
-  	assert_that device.fetch, equal_to("Configuration")
+    Courgette::Chain.expects(:all).returns([@chain1, @chain2])
   end
 
+  it "find the correct chain" do
+    @chain1.expects(:apply).with('127.0.0.1', { 'ip' => '127.0.0.1', 'vendor' => 'cisco', 'data' => 'data' }).returns("sample configuration")
+    device = Courgette::Device.new('ip' => '127.0.0.1', 'vendor' => 'cisco', 'data' => 'data')
+    assert_that device.fetch, equal_to("sample configuration")
+  end
+  
   it "throws an exception if the vendor is not found" do
-  	device = Courgette::Device.new('127.0.0.1', 'notfound', 'login', 'password', 'enable')
+  	device = Courgette::Device.new('ip' => '127.0.0.1', 'vendor' => 'notfound', 'data' => 'data')
   	begin
   	device.fetch
   	assert false
   	rescue RuntimeError => e
   	assert_that e.message, equal_to("Vendor not found")
   	end
-  end
-
-  it "doesnt guess the enable password" do
-  	Courgette::Device.expects(:new).with('127.0.0.1', 'notfound', 'login', 'password', nil)
-  	Courgette::Device.build('ip' => '127.0.0.1', 'vendor' => 'notfound', 'login' => 'login', 'password' => 'password')
   end
 end

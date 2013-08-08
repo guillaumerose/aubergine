@@ -9,7 +9,12 @@ require 'parallel'
 
 require 'net/sftp'
 
-require_relative './courgette/hp.rb'
+require_relative './courgette/fetchers/fetcher.rb'
+require_relative './courgette/fetchers/commutateurs_fetcher.rb'
+require_relative './courgette/fetchers/hp_fetcher.rb'
+require_relative './courgette/processors/processor.rb'
+require_relative './courgette/processors/default_processor.rb'
+require_relative './courgette/chain.rb'
 require_relative './courgette/device.rb'
 require_relative './courgette/client.rb'
 require_relative './courgette/executor.rb'
