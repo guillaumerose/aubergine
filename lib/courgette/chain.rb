@@ -20,7 +20,7 @@ module Courgette
 
     def self.all
       [
-        Chain.of(Fetchers::CommutateursFetcher, Processors::DefaultProcessor),
+        Chain.of(Fetchers::CommutateursFetcher, Processors::DefaultProcessor, Processors::CiscoProcessor),
         Chain.of(Fetchers::HpFetcher, Processors::DefaultProcessor)
       ]
     end
