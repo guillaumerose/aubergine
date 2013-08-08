@@ -13,19 +13,16 @@ module Courgette
     def initialize(ip, vendor, login, password, enable)
       @ip = ip
       @vendor = vendor
-      @login = login
-      @password = password
-      @enable = enable
+
+      @credentials = Commutateurs::Credentials.new(login, password, enable)
     end
 
     def self.build(hash)
-      new(hash['ip'], hash['vendor'], hash['login'], hash['password'], hash['enable'] || hash['password'])
+      new(hash['ip'], hash['vendor'], hash['login'], hash['password'], hash['enable'])
     end
 
     def fetch(debug = false)
-      credentials = Commutateurs::Credentials.new(@login, @password, @enable)
-
-      device = vendor_class.new(ip, credentials, debug)
+      device = vendor_class.new(ip, @credentials, debug)
       device.connect
       device.enable
 

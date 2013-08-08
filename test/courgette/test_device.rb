@@ -27,4 +27,9 @@ describe Courgette::Device do
   	assert_that e.message, equal_to("Vendor not found")
   	end
   end
+
+  it "doesnt guess the enable password" do
+  	Courgette::Device.expects(:new).with('127.0.0.1', 'notfound', 'login', 'password', nil)
+  	Courgette::Device.build('ip' => '127.0.0.1', 'vendor' => 'notfound', 'login' => 'login', 'password' => 'password')
+  end
 end
