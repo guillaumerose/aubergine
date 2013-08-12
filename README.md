@@ -45,7 +45,8 @@ Currently, supported devices are :
 * Cisco Catalyst
 * H3c
 * Juniper SSG
-* HP Procurve (doing sFTP - to be improved)
+* HP Procurve
+* Brocade
 
 Deploy
 ------
