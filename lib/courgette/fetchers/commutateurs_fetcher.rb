@@ -5,7 +5,8 @@ module Courgette
         'cisco'     => Commutateurs::Cisco,
         'fortigate' => Commutateurs::Fortigate,
         'h3c'       => Commutateurs::H3c,
-        'juniper'   => Commutateurs::Juniper
+        'juniper'   => Commutateurs::Juniper,
+        'hp'        => Commutateurs::HP
       }
 
       def initialize(ip, details)
@@ -15,7 +16,7 @@ module Courgette
       end
 
       def self.responsible_of(vendor)
-        ["cisco", "h3c", "juniper", "fortigate"].include? vendor
+        ["cisco", "h3c", "juniper", "fortigate", "hp"].include? vendor
       end
 
       def fetch

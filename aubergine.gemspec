@@ -1,8 +1,8 @@
 # encoding: utf-8
 Gem::Specification.new do |gem|
   gem.name = "aubergine"
-  gem.version = "0.2.0"
-  gem.date = "2013-08-09"
+  gem.version = "0.2.1"
+  gem.date = "2013-08-12"
   gem.authors = ["Guillaume Rose"]
   gem.email = "guillaume.rose@gmail.com"
   gem.summary = "Distributed RANCID - backup your network devices"
