@@ -1,3 +1,5 @@
+![Logo](http://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Aubergine.jpg/240px-Aubergine.jpg)
+
 aubergine
 =========
 
