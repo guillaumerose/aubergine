@@ -18,7 +18,7 @@ module Courgette
       end
 
       def self.responsible_of(vendor)
-        ["cisco", "h3c", "juniper", "fortigate", "hp", "brocade"].include? vendor
+        VENDORS.keys.include? vendor
       end
 
       def fetch
