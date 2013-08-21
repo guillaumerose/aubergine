@@ -7,7 +7,8 @@ module Courgette
         'h3c'       => Commutateurs::H3c,
         'juniper'   => Commutateurs::Juniper,
         'hp'        => Commutateurs::HP,
-        'brocade'   => Commutateurs::Brocade
+        'brocade'   => Commutateurs::Brocade,
+        'ironport'  => Commutateurs::Ironport
       }
 
       def initialize(ip, details)
