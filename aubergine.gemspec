@@ -1,7 +1,7 @@
 # encoding: utf-8
 Gem::Specification.new do |gem|
   gem.name = "aubergine"
-  gem.version = "0.2.4"
+  gem.version = "0.2.5"
   gem.date = "2013-08-21"
   gem.authors = ["Guillaume Rose"]
   gem.email = "guillaume.rose@gmail.com"
@@ -29,7 +29,7 @@ Gem::Specification.new do |gem|
                "lib/aubergine.rb",
                "lib/courgette.rb"]
 
-  gem.add_dependency('commutateurs', [">= 0.2.1"])
+  gem.add_dependency('commutateurs', [">= 0.2.4"])
   gem.add_dependency('git')
   gem.add_dependency('sinatra')
   gem.add_dependency('httparty')
